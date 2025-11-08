@@ -1,4 +1,5 @@
 📝 Blogify – Simple Full Stack Blog App
+
 📖 Overview
 
 Blogify is a lightweight blogging web application built to showcase full-stack development using the MERN ecosystem (without React for simplicity).
