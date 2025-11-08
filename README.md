@@ -15,4 +15,4 @@ A simple full-stack blog app built with Node.js, Express, MongoDB, and EJS.
 - Bootstrap 5
 
 ### 🌍 Live Demo
-👉 https://blogify-backend.onrender.com/posts
+👉 https://blogify-nxsp.onrender.com/posts
