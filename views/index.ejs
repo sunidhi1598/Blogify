@@ -1,0 +1,39 @@
+<%- include('layout') %>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3 class="fw-semibold">All Blog Posts</h3>
+  <a href="/posts/new" class="btn btn-primary">+ New Post</a>
+</div>
+
+<% if (posts.length === 0) { %>
+  <div class="alert alert-info text-center">
+    No posts yet. Create your first one!
+  </div>
+<% } else { %>
+  <div class="row">
+    <% posts.forEach(post => { %>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title text-primary">
+  <a href="/posts/<%= post._id %>" class="text-decoration-none text-primary">
+    <%= post.title %>
+  </a>
+</h5>
+<p class="card-text text-muted">
+  <%= post.content.substring(0, 120) %>...
+  <a href="/posts/<%= post._id %>" class="text-decoration-none">Read more</a>
+</p>
+
+          </div>
+          <div class="card-footer bg-white border-0 d-flex justify-content-between">
+            <a href="/posts/<%= post._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
+            <form action="/posts/<%= post._id %>?_method=DELETE" method="POST" class="d-inline">
+              <button class="btn btn-danger btn-sm">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+<% } %>

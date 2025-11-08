@@ -1,0 +1,23 @@
+<%- include('layout') %>
+
+<div class="card shadow-sm mx-auto" style="max-width: 800px;">
+  <div class="card-body">
+    <h2 class="mb-3 text-primary"><%= post.title %></h2>
+    <p class="text-muted">
+      <small>
+        Posted on <%= new Date(post.createdAt).toLocaleDateString() %>
+      </small>
+    </p>
+    <p style="white-space: pre-line;"><%= post.content %></p>
+
+    <div class="d-flex justify-content-between mt-4">
+      <a href="/posts" class="btn btn-outline-secondary">← Back</a>
+      <a href="/posts/<%= post._id %>/edit" class="btn btn-warning">Edit</a>
+    </div>
+  </div>
+</div>
+
+</div>
+<footer>Made with ❤️ by Sunidhi Kumari</footer>
+</body>
+</html>

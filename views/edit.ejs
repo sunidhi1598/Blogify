@@ -1,0 +1,20 @@
+<%- include('layout') %>
+
+<div class="card shadow-sm mx-auto" style="max-width: 600px;">
+  <div class="card-body">
+    <h4 class="mb-3 text-center text-warning">Edit Post</h4>
+    <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+      <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" name="title" class="form-control" value="<%= post.title %>" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Content</label>
+        <textarea name="content" class="form-control" rows="5" required><%= post.content %></textarea>
+      </div>
+      <div class="text-end">
+        <button class="btn btn-primary">Update</button>
+      </div>
+    </form>
+  </div>
+</div>
